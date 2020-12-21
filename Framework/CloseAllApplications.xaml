@@ -1,4 +1,13 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="CloseAllApplications" mva:VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="396,292" sap2010:WorkflowViewState.IdRef="CloseAllApplications_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=mscorlib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="CloseAllApplications" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=mscorlib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property sap2010:Annotation.AnnotationText="Browser element to be closed." Name="in_Browser" Type="InArgument(ui:UiElement)" />
+    <x:Property sap2010:Annotation.AnnotationText="Dictionary structure to store configuration data of the process (settings, constants and assets)." Name="in_Config" Type="InArgument(scg:Dictionary(x:String, x:Object))" />
+  </x:Members>
+  <mva:VisualBasic.Settings>
+    <x:Null />
+  </mva:VisualBasic.Settings>
+  <sap:VirtualizedContainerService.HintSize>888,1155</sap:VirtualizedContainerService.HintSize>
+  <sap2010:WorkflowViewState.IdRef>CloseAllApplications_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
       <x:String>System.Activities</x:String>
@@ -22,6 +31,15 @@
       <x:String>UiPath.Core</x:String>
       <x:String>System.Windows.Markup</x:String>
       <x:String>UiPath.Core.Activities</x:String>
+      <x:String>UiPath.Excel</x:String>
+      <x:String>UiPath.Excel.Activities</x:String>
+      <x:String>UiPath.UIAutomationNext.Enums</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities</x:String>
+      <x:String>UiPath.Platform.ObjectLibrary</x:String>
+      <x:String>UiPath.Shared.Activities</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Activities.DynamicUpdate</x:String>
+      <x:String>System.Windows</x:String>
     </sco:Collection>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
@@ -43,15 +61,77 @@
       <AssemblyReference>System.ServiceModel</AssemblyReference>
       <AssemblyReference>UiPath.System.Activities</AssemblyReference>
       <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Excel</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
+      <AssemblyReference>System.ValueTuple</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities.Design</AssemblyReference>
+      <AssemblyReference>Microsoft.Bcl.AsyncInterfaces</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:Annotation.AnnotationText="Do the necessary procedures for ending the process (e.g., logout) and close the used applications." DisplayName="Close All Applications" sap:VirtualizedContainerService.HintSize="376,232" sap2010:WorkflowViewState.IdRef="Sequence_2">
+  <Sequence sap2010:Annotation.AnnotationText="Do the necessary procedures for ending the process (e.g., logout) and close the used applications." DisplayName="Close All Applications" sap:VirtualizedContainerService.HintSize="476,1050" sap2010:WorkflowViewState.IdRef="Sequence_2">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
         <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:LogMessage DisplayName="Log message (close applications)" sap:VirtualizedContainerService.HintSize="334,94.6666666666667" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Trace" Message="[&quot;Closing applications...&quot;]" />
+    <ui:LogMessage DisplayName="Log message (close applications)" sap:VirtualizedContainerService.HintSize="434,91" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Trace" Message="[&quot;Closing applications...&quot;]" />
+    <uix:NApplicationCard sap2010:Annotation.AnnotationText="Closes the passed argument window." AttachMode="ByInstance" CloseMode="Always" DisplayName="Open Browser - Zoho Connect" sap:VirtualizedContainerService.HintSize="434,785" sap2010:WorkflowViewState.IdRef="NApplicationCard_2" InteractionMode="Simulate" Version="V1">
+      <uix:NApplicationCard.Body>
+        <ActivityAction x:TypeArguments="x:Object">
+          <ActivityAction.Argument>
+            <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+          </ActivityAction.Argument>
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="376,538" sap2010:WorkflowViewState.IdRef="Sequence_4">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <uix:NClick sap2010:Annotation.AnnotationText="Clicks the User Account Portrait at the top right corner of the web page." ClickType="Single" DisplayName="Click - Account Icon" sap:VirtualizedContainerService.HintSize="334,208" sap2010:WorkflowViewState.IdRef="NClick_3" KeyModifiers="None" MouseButton="Left">
+              <uix:NClick.Target>
+                <uix:TargetAnchorable BrowserURL="https://www.zoho.com/connect/" DesignTimeRectangle="1875, 79, 36, 36" ElementType="Icon" FriendlyName="'IMG'" FullSelectorArgument="&lt;webctrl idx='1' tag='IMG' /&gt;" FuzzySelectorArgument="&lt;webctrl type='' tag='IMG' aaname='James Panebianco' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAACgAAAAoCAYAAACM/rhtAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAMQSURBVFhH3ZiJbuIwEED5Lz6FP9+WUo5CSLgSIBAgmfUbDmXBLbEDKtqRRkiEjJ/n8phGs9mUV9ZGq9WSV9aGnORPZ/xSGsex6v8P+PaJhtLuhvLRi1Tb3UjezXc8s71TRWsDAgBUpx9J92sq4TSR2WKtGs2W0h/N5MM884X0Bnwz2hlMFCjdZrLN9pLt9nI45HLIc8nzQj/3+4Okm0zGk1g+ze/ZkM3ed+oNSAjDSaJQRVFIcXrfJjwHNF6m6tF343GbTZt6AZJrA7MQnjFrV5bc/Hi13kpvOFUbNtvX6gxILpFTs8VK9iacrkIKzOO1RqBKXjoDYngcxZfQugrvkK+9YbVQOwGyY8KzTjMtAl/Bi4HZJJu1rVNWJ0B2HIQLXcDDeRchFykYqtq2TlmdANu9UCLTVup4DyHMpIgWi2WdsjoCRjIxzfcRgDvTdgaj+d1qdgMkxCZ3aMB1hPSgL45MutwrFCdAjA2NUdpLnRxUwMMTAKnivsmbbbbTMPnKOcScKg8NMQnNQHA8QfwBqWLOb2zZ1imrEyBKa0iWG13EV8jhyXxpJqAHtxkUo5P5qnajJv/oCrY1yuoMyDnM7n0rWXugHnXTxx91KFPyIJh7n8V4PlltdMB9yrBA1RFmFnENM/uhesPpspL3UGdAFEhaBEODixfPQwIbvHfEndULECXBgyhRj1RBZCOrlGH1fu8rqzfg2YvphqZ9evkHOU8wx2nabtOm3oDk0NjcSQhbVaHymcTppU8NMR4gjxjdXRo2v9ztKJJEh9Uqd+ZKgBjBY+QdYF0TJpK9anjLQi5utju9MzN4kCYcedjF/vW19EdAwgAY998v0/swukhSrV4tDle6kuB50oP7CfZiYxfPkqMMxmfPfgsIWO/0TwEGGI/IIXofYDXY/pGjrULtYp8DAEfgVSBvALURG48FYax3WAbLOoOBq7AU8yZ/ndCSbgAhZxioG8K6opCmCG8AybEj3OmLXxKWJ+Q3gIdTjr2K3AC+EJvKDeC1AOwC/egN3gX8bbkABkEgr6hHwFj+AvGmPx8NXkRVAAAAAElFTkSuQmCC" InformativeScreenshot="ca063d51c07a5b9d749fd523b7fb1081.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Team Collaboration Software | Social Intranet - Zoho Connect' /&gt;" SearchSteps="FuzzySelector, Image">
+                  <uix:TargetAnchorable.Anchors>
+                    <scg:List x:TypeArguments="uix:ITarget" Capacity="4">
+                      <uix:Target DesignTimeRectangle="1783, 89, 82, 18" ElementType="Text" FriendlyName="'English'" FullSelectorArgument="&lt;webctrl aaname='English' parentid='block-block-3' tag='SPAN' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='English' parentid='block-block-3' tag='SPAN' type='' check:text='English' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAFYAAAAWCAYAAABaDmubAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAU6SURBVFhH7ZhrSFVZGIYFK8EupllNEmhClGCE/sgf/hFK/xgyomAYmkapIxhYmKXlmE2GBeENyyACrRBBBRGvOd4dL6ndtLKbY5ONlelkmvd39vtx9sHj0YyZTjXDeWFzLmuftdd61ru+71vHBEYZREawBpIRrIGkB3ZmZgbDw8NoamrC1atXERkZieDgYKSlp6GtrQ19fX0YHx/X3G3UQtKCJVAC6+7uxvXr13HhwgXs3bsXu3fvxtq1axEaGor6+nqUlZWhpaUF79+/1/zSqPmkBTs5OYnnz5/jwIED2LVrFw4fOYKf4+Phr8C127QJeXl5ePbsGQ4fPoLEs2eRnZ2N0dFRTE1NaXr4epqensaTJ0++68XVgh0aGkJYWBgsLS1hsXo1QpX3ySmpOHYsWrmOoaqqGpmZmXB0dMSaNWvktaSkBB8+fND0oCvuAPb59u1bvevfhpLExERs3rwZHR0dOHXqFLZv346HDx9qWvWVkJAg99+5c0fzjeGlBVtYWIgNGzZg6dKlWL58uQx2//79qK2tFafeu3cPsbGxsLGxwbJly7By5Ur4+fnhxYsXmh50RTczfJiYmOhd5eXlmrv+mVRQt2/fRlFREY4fP46XL19qWvX1TcESooWFBczMzGBtbS0uvVlZiXfv3snWy8rKgoODg8AneN5nZWUlrplPKtiFJpSamgpPT0+EhITA1tZWFurcuXMSkuj2goICbNu2TRbCy8sLAQEBCAoKwuvXr3VAMdFyjPwd28LDw6W/LVu2ICkpScbB+9etWyd9zH2WoaQFu3PnTvygQKNTo6KiZBsTKK+JiQmcPHkSO3a44Cdl4N7e3li1ahVWKyEjJydH04OuFgPLyRIad0FXV5dA42cmyNbWVgHAxeYWv3z5ssBwc3MTZ84GO/s9E66LiwsePHiAhoYGyRe3bt3Se9bBgwe1zzKUtGB9fHzEIXFxcTJIJobJySlZVU7O3d1dnMqVp7MJlhNKTk7W9KCrhULBpUuXpF0F0t7eLp+vXbsm7fn5+RJDuTNqamqkjYvs6+v7WWC5AOnp6RLL6Xxq7rMYimaPxRDSgq2oqEB1dTWio6Nx4sQJZFy8KAPp7+/Ho0fdCAwMxNatW2Fubo4lS5Zg48aN+OXMGdmy82m2Y+kMNXFx61KzgVAq2IyMDMTExOi0qX0tBpahgG4kXPbl6uqKx48f6z2L4/lqYCt/rcTox4+4cuUK1q9fD1NTUzg5O4kLxsbGlEH3o7GxUQZLuM7Ozrhx4wZ6eno0Pejqc0LB7DYVLCdLx/K9ulUZQxl+FgOripVKbm6uuJ7t3xRseUU5/lK2/++9vUhJScGKFStk20dEREh5xHq1V2nbt28f7OzsEK0kt7Kycpn0fFLB2tvbS2WhOpYX2z4FVo2xe/bskTB0/vz5RWMskyhjsYeHB54+fYrm5mb5nqEqXqnHvxnYgYEBFCt16Zs3b5QS6g8ZCDNraWmptu4kFIaKHxX3lPIE1toibp5PKlhOYO7FCX0KLBMmDySM+aw8Dh06JCfAxRzLhVerDCcnJwkpc++nvipYOvL+/ftoUlb61as/EXX0KPz9/eU0xjYmgpGRESUc/Ibi4hIBOzg4KBC+tOjSo8rzmWS4mATBaoWl1EIHku9NWrDqfwU8KrKEqqqqQmpamvzpwsqAE6KbCZYTZhIiVDXzfknR7QxH3DF0Fl9Pnz4t7vuvSAtWFbc2KwEeDuob6uXExbqws7MTdXV1uHv3rkA2ZHH9f5AeWKO+jIxgDSQjWAPJCNYgAv4GNWyiDvhY5SEAAAAASUVORK5CYII=" SearchSteps="FuzzySelector, Image" Text="English" TextMethod="AttributeText" TextSelector="&lt;webctrl tag='SPAN' type='' /&gt;" />
+                    </scg:List>
+                  </uix:TargetAnchorable.Anchors>
+                </uix:TargetAnchorable>
+              </uix:NClick.Target>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </uix:NClick>
+            <uix:NClick sap2010:Annotation.AnnotationText="Clicks the Sign Out button." ClickType="Single" DisplayName="Click - Sign Out" sap:VirtualizedContainerService.HintSize="334,197" sap2010:WorkflowViewState.IdRef="NClick_4" KeyModifiers="None" MouseButton="Left">
+              <uix:NClick.Target>
+                <uix:TargetAnchorable BrowserURL="https://www.zoho.com/connect/" DesignTimeRectangle="1822, 170, 80, 22" ElementType="Text" FriendlyName="'Sign Out'" FullSelectorArgument="&lt;webctrl aaname='Sign Out' idx='1' tag='A' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='Sign Out' type='' tag='A' check:text='Sign Out' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAFAAAAAWCAYAAABXEBvcAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAALsSURBVFhH7ZZLS3JRFIa/H9C8/xANIgKJiqQgCZpYs6JEQ5AIgiKKBtYknDVo3qBJEIFWIiiGSRBd6AoFNeiCYRfs8hPeeBesw0n7PvDooPj2gpd99jn7tp691t7nD4xVZAZghWYB/Pj4MCpDagagQ6kZgA6lZgA6lFpVAF5cXMDn86G9vR0NDQ1YWlrC6+vrlzbv7+9IpVLo7OxEW1sb6urqMDExgfv7+y/t/iUdw+PxwO12w+VyYXJysqwxqiW1igESFJ2IRCLi4MnJiUDa2trC4eGhPB8fHyOTyaCxsRHxeFzaPTw8IBAIYGxsDLu7u6ivr5fnl5cXGTeZTKKrqwt3d3fWXHxHcHt7e1J/fn5GOBxGKBSS55mZGalre51/c3MTXq8Xzc3NqK2tlQ1k/fT01GpbrtQqBsiFDw8PY2FhQeqE8/j4KKU6sL+/j5GREczOzsp77Xt9fS3Ry3aMXDq3uroq34oBEizHWFxctPpTl5eXMsfOzs5fAXIDv6tXIrWqpHA6nUZTUxP6+vqwsrKCm5sbea8L3t7eRnd3N9bX10v62tvNz8+jo6MDV1dXJQBZcgzOZe/79PQEv9+P5eXl3wuQKhQKOD8/FwhMRzqqC2b6slTnCZSgqN7eXmxsbMj3g4MDjI+Py5GQSCRKALJOsPZ5Ge1DQ0Ny7v5KgG9vbzg6OsLt7a3UmaJTU1OYm5uzFswzi2lenH76PRqNWo5xE3gZEeJ3KcwNso9xdnYmZ9qvTWGegaOjoxI5jMJcLof+/n6JCPuCGWUtLS0SZexH0LFYTC4FlnbH2LempuYLQIrR19raKrB0bgILBoOSyjw+OHc+n5fva2trEuFcE+s/EiDFi2BgYEAuAv5aTE9PixP2BROYpiojhlE2ODgoN3CxY4RBKMUAOQZ/Y5j6vFE5F3+FNPo5J6Of5zE3pqenB9ls1ur/YwH+j1IzAB1KzQB0KDUD0KHUDECHUjMAHUrNAmjMmRmAFRnwCRscPiJV9qY8AAAAAElFTkSuQmCC" InformativeScreenshot="64ceef19b3cdd2154bacf0622e60ac90.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Team Collaboration Software | Social Intranet - Zoho Connect' /&gt;" SearchSteps="FuzzySelector, Image" Text="Sign Out" TextMethod="AttributeText" TextSelector="&lt;webctrl type='' tag='A' /&gt;" />
+              </uix:NClick.Target>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </uix:NClick>
+          </Sequence>
+        </ActivityAction>
+      </uix:NApplicationCard.Body>
+      <uix:NApplicationCard.TargetApp>
+        <uix:TargetApp BrowserType="Edge" IconBase64="iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAH5SURBVDhPVVNNb9NQEPTPKo39zJVwReLeNkfatHBE/AnU1nDixo8ADpyR+BeVajuxYycNQsRZZmafU6i0fe9tZmdnP5zUWbA6S+0+P7YqxT3PrU6fyFeHYz8jhlYF3CcT3IHDO+GDziZ1AMFNikAEV2km3wLEVTqxRY5AkJeZn4xLygzZAC4zgJXRs5VUo3tQwCJkkdB9CySkqYQKJBUk0aHg51Pri1vb3l7bA2zzobA13pt3b21J6VG1FIgto1zW5QT9/Nz2+53Z3v7/w7sKjlEyEIHAHUuWEOVRajd/Y83rc+sur2z7+ZMNYhsOjVXpwEYCr3u8j/Xx3ZydmK06Cfj99Xv0B1sGlAHVIqBT4yE7bAxenZ3a0CEYyXd9Z+3LFyr3nvVzKsCpB3U4OgTxR46tZ/B6o8xDv7J2NhPGcWyg4xNlRjPK/ClOH2U1ndpwd+dNhIJ2dhKb7IFjdvYt4dKIBItBJwEPxXtlZnyLJo5ZHxU4jsunHrgcnytt9+MnQv9Ixba40U6si2tbf7zxJPmRJlXnUOCBcQN54lv49e2Lsvu/f84BimanUiA8zJt4UJFai7qa6TPrLi4kv72a22p+CXulRnKttY0iQQmqC6PRvuPOc2wYp6PehDz62IPHCVBxLCE6BAA7ahvf/Gz1rcTxEkvzLzSzvztjo425nTtGAAAAAElFTkSuQmCC" InformativeScreenshot="487bb6a9ed405c96ecfe4fa1e6f078f6.png" Selector="&lt;html app='msedge.exe' title='Team Collaboration Software | Social Intranet - Zoho Connect'/&gt;" Url="[in_Config(&quot;ZohoConnect&quot;).ToString]" />
+      </uix:NApplicationCard.TargetApp>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </uix:NApplicationCard>
   </Sequence>
 </Activity>
