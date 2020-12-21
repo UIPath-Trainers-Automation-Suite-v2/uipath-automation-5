@@ -82,7 +82,7 @@
         <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <uix:NApplicationCard sap2010:Annotation.AnnotationText="Attach Microsoft Edge Browser with the Zoho Board webpage" AttachMode="ByInstance" CloseMode="Always" DisplayName="Use Browser Edge: Revature Connect" sap:VirtualizedContainerService.HintSize="510,3079.33333333333" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="Simulate" Version="V1">
+    <uix:NApplicationCard sap2010:Annotation.AnnotationText="Attach Microsoft Edge Browser with the Zoho Board webpage" AttachMode="ByInstance" CloseMode="Never" DisplayName="Use Browser Edge: Revature Connect" sap:VirtualizedContainerService.HintSize="510,3079.33333333333" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="Simulate" Version="V1">
       <uix:NApplicationCard.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
