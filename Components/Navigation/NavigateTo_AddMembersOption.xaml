@@ -5,7 +5,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>905.333333333333,1028.66666666667</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>783.333333333333,1028.66666666667</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>NavigateToAddMemebersOption_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -86,7 +86,7 @@
         <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <uix:NApplicationCard sap2010:Annotation.AnnotationText="Attach Microsoft Edge Browser with the Zoho Board webpage using the UiElement argument." AttachMode="ByInstance" DisplayName="Use Browser Edge: Revature Connect" sap:VirtualizedContainerService.HintSize="434,786.666666666667" sap2010:WorkflowViewState.IdRef="NApplicationCard_2" InUiElement="[in_Browser]" Version="V1">
+    <uix:NApplicationCard sap2010:Annotation.AnnotationText="Attach Microsoft Edge Browser with the Zoho Board webpage using the UiElement argument." AttachMode="ByInstance" CloseMode="IfOpenedByAppBrowser" DisplayName="Use Browser Edge: Revature Connect" sap:VirtualizedContainerService.HintSize="434,786.666666666667" sap2010:WorkflowViewState.IdRef="NApplicationCard_2" InUiElement="[in_Browser]" Version="V1">
       <uix:NApplicationCard.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>

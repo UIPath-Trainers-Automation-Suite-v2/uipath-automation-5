@@ -7,7 +7,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>905.333333333333,2347.33333333333</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>783.333333333333,2387.33333333333</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>AddMembers_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -81,14 +81,14 @@
       <AssemblyReference>System.ServiceModel</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:Annotation.AnnotationText="This workflow bulk adds all the members to the Zoho Board and must start on the 'Add Member' window. It takes in as input the filepath of the .csv file containing the emails and the UiElement of the Zoho Board in order to attach the browser. It outputs an argument that contains the emails that were not able to be added in a datatable." DisplayName="AddMembers" sap:VirtualizedContainerService.HintSize="552,2242.66666666667" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence sap2010:Annotation.AnnotationText="This workflow bulk adds all the members to the Zoho Board and must start on the 'Add Member' window. It takes in as input the filepath of the .csv file containing the emails and the UiElement of the Zoho Board in order to attach the browser. It outputs an argument that contains the emails that were not able to be added in a datatable." DisplayName="AddMembers" sap:VirtualizedContainerService.HintSize="552,2282.66666666667" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
         <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <uix:NApplicationCard sap2010:Annotation.AnnotationText="Attach Microsoft Edge Browser with the Zoho Board webpage using the UiElement arguement" AttachMode="ByInstance" DisplayName="Use Browser Edge: Revature Connect" sap:VirtualizedContainerService.HintSize="510,2072" sap2010:WorkflowViewState.IdRef="NApplicationCard_4" InUiElement="[in_Browser]" Version="V1">
+    <uix:NApplicationCard sap2010:Annotation.AnnotationText="Attach Microsoft Edge Browser with the Zoho Board webpage using the UiElement arguement" AttachMode="ByInstance" CloseMode="IfOpenedByAppBrowser" DisplayName="Use Browser Edge: Revature Connect" sap:VirtualizedContainerService.HintSize="510,2112" sap2010:WorkflowViewState.IdRef="NApplicationCard_4" InUiElement="[in_Browser]" Version="V1">
       <uix:NApplicationCard.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
@@ -110,7 +110,7 @@
                 <uix:TargetAnchorable BrowserURL="https://connect.revature.net/board/newboard/section" DesignTimeRectangle="543, 389, 132, 45" ElementType="Text" FriendlyName="'Upload CSV'" FullSelectorArgument="&lt;webctrl parentid='inviteUsersPopup' tag='LABEL' /&gt;" FuzzySelectorArgument="&lt;webctrl parentid='inviteUsersPopup' tag='LABEL' type='' aaname='Upload CSV' check:text='Upload CSV' /&gt;" ImageBase64="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" InformativeScreenshot="0827f8207c286b5b9d26f8e8cb0f9cfe.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='(54) Revature' /&gt;" SearchSteps="FuzzySelector, Image" Text="Upload CSV" TextMethod="AttributeText" TextSelector="&lt;webctrl tag='LABEL' type='' /&gt;" />
               </uix:NClick.Target>
             </uix:NClick>
-            <uix:NApplicationCard sap2010:Annotation.AnnotationText="Attach the file explorer page that opens." AttachMode="ByInstance" DisplayName="Use Application: File Explorer" sap:VirtualizedContainerService.HintSize="434,888.666666666667" sap2010:WorkflowViewState.IdRef="NApplicationCard_3" Version="V1">
+            <uix:NApplicationCard sap2010:Annotation.AnnotationText="Attach the file explorer page that opens." AttachMode="ByInstance" CloseMode="IfOpenedByAppBrowser" DisplayName="Use Application: File Explorer" sap:VirtualizedContainerService.HintSize="434,888.666666666667" sap2010:WorkflowViewState.IdRef="NApplicationCard_3" Version="V1">
               <uix:NApplicationCard.Body>
                 <ActivityAction x:TypeArguments="x:Object">
                   <ActivityAction.Argument>
