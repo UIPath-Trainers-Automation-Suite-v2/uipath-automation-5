@@ -88,13 +88,13 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ra:GitHub_Web_Logout>
-    <uix:NApplicationCard sap2010:Annotation.AnnotationText="Attach the browser instance tha contains the Github webpage on Microdoft Edge" AttachMode="ByInstance" DisplayName="Use Application/Browser" sap:VirtualizedContainerService.HintSize="434,339.333333333333" sap2010:WorkflowViewState.IdRef="NApplicationCard_2" InUiElement="[in_Browser]" InteractionMode="Simulate" Version="V1">
+    <uix:NApplicationCard sap2010:Annotation.AnnotationText="Attach the browser instance tha contains the Github webpage on Microdoft Edge" AttachMode="ByInstance" DisplayName="Use Browser - Github" sap:VirtualizedContainerService.HintSize="434,339.333333333333" sap2010:WorkflowViewState.IdRef="NApplicationCard_2" InUiElement="[in_Browser]" InteractionMode="Simulate" Version="V1">
       <uix:NApplicationCard.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
           </ActivityAction.Argument>
-          <uix:NNavigateBrowser Action="CloseTab" sap2010:Annotation.AnnotationText="Close Github tab" DisplayName="Navigate Browser - Close Tab" sap:VirtualizedContainerService.HintSize="334,114" sap2010:WorkflowViewState.IdRef="NNavigateBrowser_1">
+          <uix:NNavigateBrowser Action="CloseTab" sap2010:Annotation.AnnotationText="Close Github tab" DisplayName="Navigate Browser - Close Github" sap:VirtualizedContainerService.HintSize="334,114" sap2010:WorkflowViewState.IdRef="NNavigateBrowser_1">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
