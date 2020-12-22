@@ -6,7 +6,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>951,786</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1002,786</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Initialization_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -70,9 +70,9 @@
   </TextExpression.ReferencesForImplementation>
   <Sequence sap2010:Annotation.AnnotationText="Open applications used in the process and do necessary initialization procedures (e.g., login)." DisplayName="Initialize All Applications" sap:VirtualizedContainerService.HintSize="421,681" sap2010:WorkflowViewState.IdRef="Sequence_9">
     <Sequence.Variables>
-      <Variable x:TypeArguments="x:String" Name="Email" />
-      <Variable x:TypeArguments="ss:SecureString" Name="Password" />
-      <Variable x:TypeArguments="ui:UiElement" Name="Browser" />
+      <Variable x:TypeArguments="x:String" sap2010:Annotation.AnnotationText="User Email From Get App Credential Workflow" Name="Email" />
+      <Variable x:TypeArguments="ss:SecureString" sap2010:Annotation.AnnotationText="Password from Get App Credentials Workflow" Name="Password" />
+      <Variable x:TypeArguments="ui:UiElement" sap2010:Annotation.AnnotationText="Browser UI Element Holding Current Browser Instance From Navigate to Revature Workflow " Name="Browser" />
     </Sequence.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">

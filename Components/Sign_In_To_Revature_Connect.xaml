@@ -2,15 +2,15 @@
   <x:Members>
     <x:Property sap2010:Annotation.AnnotationText="email used to sign in to revature connect" Name="in_Email" Type="InArgument(x:String)" />
     <x:Property sap2010:Annotation.AnnotationText="Passwor used to sign into revature connect" Name="in_Password" Type="InArgument(ss:SecureString)" />
-    <x:Property Name="in_Browser" Type="InArgument(ui:UiElement)" />
+    <x:Property sap2010:Annotation.AnnotationText="UI Element used to identify browser instance" Name="in_Browser" Type="InArgument(ui:UiElement)" />
   </x:Members>
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1002,1208</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1002,1341</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>SignInToRevatureConnect_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
-    <scg:List x:TypeArguments="x:String" Capacity="34">
+    <scg:List x:TypeArguments="x:String" Capacity="39">
       <x:String>System.Activities</x:String>
       <x:String>System.Activities.Statements</x:String>
       <x:String>System.Activities.Expressions</x:String>
@@ -45,10 +45,15 @@
       <x:String>System.Reflection</x:String>
       <x:String>System.Runtime.InteropServices</x:String>
       <x:String>UiPath.UIAutomationNext.Contracts</x:String>
+      <x:String>UiPath.CV</x:String>
+      <x:String>UiPath.Shared.ObjectLibrary</x:String>
+      <x:String>UiPath.CV.Activities</x:String>
+      <x:String>UiPath.CV.Activities.Interfaces</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
     </scg:List>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
-    <scg:List x:TypeArguments="AssemblyReference" Capacity="31">
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="33">
       <AssemblyReference>System.Activities</AssemblyReference>
       <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
       <AssemblyReference>mscorlib</AssemblyReference>
@@ -80,38 +85,41 @@
       <AssemblyReference>System.ComponentModel.Composition</AssemblyReference>
       <AssemblyReference>System.ServiceModel</AssemblyReference>
       <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
+      <AssemblyReference>UiPath.CV</AssemblyReference>
+      <AssemblyReference>UiPath.CV.Activities</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:Annotation.AnnotationText="This workflow signs a trainer into revature connect using the trainers credentials as input." DisplayName="SignInToRevatureConnect" sap:VirtualizedContainerService.HintSize="476,1039" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence sap2010:Annotation.AnnotationText="This workflow signs a trainer into revature connect using the trainers credentials as input." DisplayName="SignInToRevatureConnect" sap:VirtualizedContainerService.HintSize="1002,1276" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
         <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Browser Edge: Zoho Accounts" sap:VirtualizedContainerService.HintSize="434,905" sap2010:WorkflowViewState.IdRef="NApplicationCard_3" InUiElement="[in_Browser]" InteractionMode="Simulate" Version="V1">
+    <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Browser Edge: Zoho Accounts" sap:VirtualizedContainerService.HintSize="960,1153" sap2010:WorkflowViewState.IdRef="NApplicationCard_3" InUiElement="[in_Browser]" InteractionMode="Simulate" Version="V1">
       <uix:NApplicationCard.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
           </ActivityAction.Argument>
-          <Sequence sap:VirtualizedContainerService.HintSize="376,689" sap2010:WorkflowViewState.IdRef="Sequence_6">
+          <Sequence DisplayName="Sign In and Confirm Sign In" sap:VirtualizedContainerService.HintSize="242,249" sap2010:WorkflowViewState.IdRef="Sequence_6">
             <Sequence.Variables>
-              <Variable x:TypeArguments="x:Boolean" Name="MyFeedExists" />
+              <Variable x:TypeArguments="x:Boolean" Name="RevatureExists" />
+              <Variable x:TypeArguments="x:Boolean" Name="ElementExists" />
             </Sequence.Variables>
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <Sequence DisplayName="Sign in " sap:VirtualizedContainerService.HintSize="334,66" sap2010:WorkflowViewState.IdRef="Sequence_4">
+            <Sequence DisplayName="Sign in " sap:VirtualizedContainerService.HintSize="200,66" sap2010:WorkflowViewState.IdRef="Sequence_4">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsExpanded">False</x:Boolean>
                   <x:Boolean x:Key="IsPinned">False</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
-              <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="None" DisplayName="Type Into 'INPUT  login_id'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="334,226" sap2010:WorkflowViewState.IdRef="NTypeInto_2" Text="[in_Email]">
+              <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="None" DisplayName="Type into in_Email from Get App Credentials Workflow" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="334,226" sap2010:WorkflowViewState.IdRef="NTypeInto_2" Text="[in_Email]">
                 <uix:NTypeInto.Target>
                   <uix:TargetAnchorable BrowserURL="https://accounts.zoho.com/signin?hide_signup=true&amp;stop_mredirect=true&amp;portal_id=694077659&amp;hide_secure=true&amp;hide_gsignup=true&amp;servicename=ZohoPulse&amp;serviceurl=https%3A%2F%2Fconnect.revature.net%2F" DesignTimeRectangle="169, 400, 420, 44" ElementType="InputBox" FriendlyName="'INPUT  login_id'" FullSelectorArgument="&lt;webctrl tag='INPUT' type='email' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='INPUT' type='email' aaname='' /&gt;" ImageBase64="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" InformativeScreenshot="292eb1ee566ce497397d12a4e99f4fdb.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Zoho Accounts' /&gt;" SearchSteps="FuzzySelector, Image" />
                 </uix:NTypeInto.Target>
@@ -127,7 +135,7 @@
                   </uix:TargetAnchorable>
                 </uix:NClick.Target>
               </uix:NClick>
-              <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="None" DisplayName="Type Into 'anthony.tejada@revature…'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="334,226" sap2010:WorkflowViewState.IdRef="NTypeInto_3" IsPassword="True" SecureText="[in_Password]">
+              <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="None" DisplayName="Type into in_Password from Get App Credentials Workflow" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="334,226" sap2010:WorkflowViewState.IdRef="NTypeInto_3" IsPassword="True" SecureText="[in_Password]">
                 <uix:NTypeInto.Target>
                   <uix:TargetAnchorable BrowserURL="https://accounts.zoho.com/signin?hide_signup=true&amp;stop_mredirect=true&amp;portal_id=694077659&amp;hide_secure=true&amp;hide_gsignup=true&amp;servicename=ZohoPulse&amp;serviceurl=https%3A%2F%2Fconnect.revature.net%2F" DesignTimeRectangle="169, 466, 420, 44" ElementType="InputBoxPassword" FriendlyName="'INPUT  password'" FullSelectorArgument="&lt;webctrl id='password' tag='INPUT' type='password' /&gt;" FuzzySelectorArgument="&lt;webctrl id='password' tag='INPUT' type='password' aaname='' /&gt;" ImageBase64="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" InformativeScreenshot="0ea3ec7b7ee5b1c72e929d7e3ce861a2.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Zoho Accounts' /&gt;" SearchSteps="FuzzySelector, Image">
                     <uix:TargetAnchorable.Anchors>
@@ -150,66 +158,74 @@
                 </uix:NClick.Target>
               </uix:NClick>
             </Sequence>
-            <ui:TextExists FormattedText="{x:Null}" DisplayName="Text Exists 'A  /myfeed'" sap:VirtualizedContainerService.HintSize="334,51" sap2010:WorkflowViewState.IdRef="TextExists_1" Occurrence="1" Result="[MyFeedExists]" Text="My Feed">
-              <ui:TextExists.Target>
-                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="c45cfee4-376c-49cf-99b9-e2bc70706b56" InformativeScreenshot="c7c35904aefb843d17d88c4938973352" Selector="&lt;webctrl aaname='My Feed' parentid='leftTabOptionCont' tag='A' /&gt;">
-                  <ui:Target.TimeoutMS>
-                    <InArgument x:TypeArguments="x:Int32" />
-                  </ui:Target.TimeoutMS>
-                  <ui:Target.WaitForReady>
-                    <InArgument x:TypeArguments="ui:WaitForReady" />
-                  </ui:Target.WaitForReady>
-                </ui:Target>
-              </ui:TextExists.Target>
+            <ui:InterruptibleDoWhile DisplayName="Check For Element While It Does Not Exists" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="InterruptibleDoWhile_1">
+              <ui:InterruptibleDoWhile.Body>
+                <Sequence DisplayName="Confirm Sign In" sap:VirtualizedContainerService.HintSize="848,572" sap2010:WorkflowViewState.IdRef="Sequence_10">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <uix:NCheckState DisplayName="Check App State 'Trending Tags'" Exists="[ElementExists]" sap:VirtualizedContainerService.HintSize="806,480" sap2010:WorkflowViewState.IdRef="NCheckState_1" Timeout="70">
+                    <uix:NCheckState.IfExists>
+                      <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="376,254" sap2010:WorkflowViewState.IdRef="Sequence_7">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <Assign sap:VirtualizedContainerService.HintSize="334,61" sap2010:WorkflowViewState.IdRef="Assign_1">
+                          <Assign.To>
+                            <OutArgument x:TypeArguments="x:Boolean">[ElementExists]</OutArgument>
+                          </Assign.To>
+                          <Assign.Value>
+                            <InArgument x:TypeArguments="x:Boolean">True</InArgument>
+                          </Assign.Value>
+                        </Assign>
+                        <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="334,59" sap2010:WorkflowViewState.IdRef="MessageBox_1" Text="[&quot;Element appeared&quot;]" />
+                      </Sequence>
+                    </uix:NCheckState.IfExists>
+                    <uix:NCheckState.IfNotExists>
+                      <Sequence DisplayName="Target does not appear" sap:VirtualizedContainerService.HintSize="376,254" sap2010:WorkflowViewState.IdRef="Sequence_8">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <Assign sap:VirtualizedContainerService.HintSize="334,61" sap2010:WorkflowViewState.IdRef="Assign_2">
+                          <Assign.To>
+                            <OutArgument x:TypeArguments="x:Boolean">[ElementExists]</OutArgument>
+                          </Assign.To>
+                          <Assign.Value>
+                            <InArgument x:TypeArguments="x:Boolean">False</InArgument>
+                          </Assign.Value>
+                        </Assign>
+                        <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="334,59" sap2010:WorkflowViewState.IdRef="MessageBox_2" Text="[&quot;Please authenticate&quot;]" />
+                      </Sequence>
+                    </uix:NCheckState.IfNotExists>
+                    <uix:NCheckState.Target>
+                      <uix:TargetAnchorable BrowserURL="https://connect.revature.net/" DesignTimeRectangle="973, 197, 161, 18" FriendlyName="'Trending Tags'" FullSelectorArgument="&lt;webctrl parentid='widget_TRENDING_TAGS' tag='H3' /&gt;" FuzzyAccuracy="0.54" FuzzySelectorArgument="&lt;webctrl parentid='widget_TRENDING_TAGS' tag='H3' type='' aaname='Trending Tags' check:text='Trending Tags' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAKUAAAAWCAYAAAChdVwBAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAU1SURBVGhD7ZlpK7VbGMfPV/ABfAjFC0kiIi8kRMlUZI7IFEWZknkoMpMXMouQUgglMmbIVMiYkJkM1+l/nb3ubvvsbdt4nrPP0/rVbu973etew73+6xrW/oskEhNDilJickhRSkwOKUqJyaGIMicnhzw8PPR+qqurNTV/Lefn5+Tp6UnT09N83dvbS76+vnRwcMDXP8XDw4PJzFnyHkWUy8vLNDExwZ/6+nqytLSk9vZ2pWxjY0NT89eiS5Tu7u60v7/P1z/Fy8uLycxZ8h6d7huCsLW1pa2tLU3J70NblL+L/3LOkvd8WpTDw8M0OztLq6urlJaWRj09PVx+d3dHra2tFBcXR2VlZbS3t8flAPXx3NnZGdXU1HCdwcFBenx81NQgen19pcnJSUpISKCUlBQaHx9/J8rt7W1qaGig29tbvhbjQD/5+fn8DJ5HOwL0V1dXR1FRUdwvrCzE/vT0pKnxb3TNWYwtPT2d29LuR8w9JiaGx4Jn0Q9CA4BrlOM+LD7qSwzzaVHi5fr7+1NwcDD/Hhsbo9PTUy4rLS3lhR8aGiJvb2/F7cEVWltbU0REBIupq6uL20U5eHt7o46ODnJ0dKTu7m5uMzU1lczMzBRR4hsixWID9I02UG90dJQaGxu5j6mpKb4PQQYGBlJtbS0dHx9TW1sb38/NzeVrfWjPGe69pKSEQkJClLHb2dnRwMAA34fwkpKSKDs7mw4PD2lkZEQZF+aPdlxcXKizs5N/l5eX84aTGMYoUbq5udHR0ZGmhKiyspKysrLo+flZU0LU0tJCBQUFLDiILzQ0lK6urjR3SbGqWNSTkxNOKCBGgbb71iXKjIwMpU/0k5eXx+UA9cPDw+nm5oav7+/v2VKJ9vSha87oQ20ZsQEgOlhc1AsICFCELsYhNhy+0S/6lxiHUaLES8fLBxAVxBUWFsaWUnxgPYTosDDit0BdBjcMoast2GdEKQQoUJetr6+Tn5+fsnmENV9YWOBrfeiaswAiRP/Nzc3vNhTaXVlZ4TpwzbGxsRyeAIQdTk5O7CWQNKnfgeRjjBKlWgx4yVggLBQWTP2BZRSW8iNRagsO4Pd3RIl+4bKtrKzYCiM0QGattua60DVnxM+RkZHcDtw0NqB6PnDHCA1wOgBXjSMmddyIMTc1NZGrqyuPR8xJ8jFfFiUWH25auGpdGBIlrAwWbHNzU3P3+6K8vLxka72zs8O/P0pu1GjPGZbQx8fnXRyoHjuSNQh1bm6O+1HPURtsCLwn7XFLdPNlUYL5+Xmuh4QDsRdePlyVcJWGRInFDAoKouLiYl5klFVVVZG5ufmXRSniVLjwoqIiqqio4CREPK8P7TlD1AgtlpaW+BoJFNyzGDssIjJyWEn0jdClv79fCRtwOrC2tsYbVogSMbjEMN8SJV44LAmsHTJmiCk6Olr598WQKMHi4iIvLJ53cHDgpCc+Pv7LokTfOMJBbIe2cDQE4aMPCFYf2nOGkJAxW1hY8LMYE04XYIUx9ouLC46xkZVjIyLBQ2JjY2PDcS3iZbwXxJX29vaUnJzMz0gMo1OUXwGWTp2pGgsWWl8YYAywuhC+GhzZIFOG9TMWjEu9qQQ4wtLeHNfX13zaAEEKcL762RBC8g8/JkpTAZbLy8uLrSRcLlwojnHgXg0lO8YAy+rs7Ex9fX2c4e/u7lJhYSElJibKQ/Jv8seJEtYaQoQVQ6KSmZlJMzMz37LiuoBVR9yIOBHxK/6RQmyt/rdK8jX+OFFK/v9IUUpMDilKickhRSkxMYj+Bh+bHRE3fe5XAAAAAElFTkSuQmCC" InformativeScreenshot="c387843070cf2713cfd6fccc4f39386d.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='(94) Revature' /&gt;" SearchSteps="FuzzySelector" Text="Trending Tags" TextMethod="AttributeText" TextSelector="&lt;webctrl tag='H3' type='' /&gt;" />
+                    </uix:NCheckState.Target>
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                  </uix:NCheckState>
+                </Sequence>
+              </ui:InterruptibleDoWhile.Body>
+              <ui:InterruptibleDoWhile.Condition>
+                <mva:VisualBasicValue x:TypeArguments="x:Boolean" ExpressionText="ElementExists.Equals(False)" />
+              </ui:InterruptibleDoWhile.Condition>
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsExpanded">False</x:Boolean>
                   <x:Boolean x:Key="IsPinned">False</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
-            </ui:TextExists>
-            <ui:InterruptibleWhile DisplayName="While" sap:VirtualizedContainerService.HintSize="334,399" sap2010:WorkflowViewState.IdRef="InterruptibleWhile_1">
-              <ui:InterruptibleWhile.Body>
-                <Sequence sap:VirtualizedContainerService.HintSize="242,234" sap2010:WorkflowViewState.IdRef="Sequence_5">
-                  <Sequence.Variables>
-                    <Variable x:TypeArguments="x:String" Name="choice" />
-                  </Sequence.Variables>
-                  <sap:WorkflowViewStateService.ViewState>
-                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                    </scg:Dictionary>
-                  </sap:WorkflowViewStateService.ViewState>
-                  <ui:InputDialog Options="{x:Null}" DisplayName="Input Dialog" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="InputDialog_1" IsPassword="False" Label="Have you authenticated account?" OptionsString="Yes;No" Title="Are verified">
-                    <ui:InputDialog.Result>
-                      <OutArgument x:TypeArguments="x:String">[choice]</OutArgument>
-                    </ui:InputDialog.Result>
-                    <sap:WorkflowViewStateService.ViewState>
-                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                      </scg:Dictionary>
-                    </sap:WorkflowViewStateService.ViewState>
-                  </ui:InputDialog>
-                  <If Condition="[choice.Equals(&quot;No&quot;)]" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="If_1">
-                    <sap:WorkflowViewStateService.ViewState>
-                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                      </scg:Dictionary>
-                    </sap:WorkflowViewStateService.ViewState>
-                    <If.Then>
-                      <Delay Duration="00:01:10" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="Delay_1" />
-                    </If.Then>
-                    <If.Else>
-                      <ui:Break sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="Break_1" />
-                    </If.Else>
-                  </If>
-                </Sequence>
-              </ui:InterruptibleWhile.Body>
-              <ui:InterruptibleWhile.Condition>
-                <mva:VisualBasicValue x:TypeArguments="x:Boolean" ExpressionText="MyFeedExists.Equals(&quot;False&quot;)" />
-              </ui:InterruptibleWhile.Condition>
-            </ui:InterruptibleWhile>
+            </ui:InterruptibleDoWhile>
           </Sequence>
         </ActivityAction>
       </uix:NApplicationCard.Body>
