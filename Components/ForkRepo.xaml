@@ -6,7 +6,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1328,1029</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>863,1230</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ForkRepo_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="26">
@@ -67,15 +67,15 @@
       <AssemblyReference>System.ServiceModel</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:Annotation.AnnotationText="Forks a Github Repository to the specified Organization. Takes in the organization name from the dispatcher prompt as well as the transaction item(repository URL) to navigate to the repository and fork it into the organization. " DisplayName="ForkRepo" sap:VirtualizedContainerService.HintSize="873,964" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence sap2010:Annotation.AnnotationText="Forks a Github Repository to the specified Organization. Takes in the organization name from the dispatcher prompt as well as the transaction item(repository URL) to navigate to the repository and fork it into the organization. " DisplayName="ForkRepo" sap:VirtualizedContainerService.HintSize="873,1165" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
         <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:OpenBrowser CommunicationMethod="{x:Null}" Hidden="{x:Null}" NewSession="{x:Null}" Private="{x:Null}" UiBrowser="{x:Null}" BrowserType="Edge" DisplayName="Open the repository URL" sap:VirtualizedContainerService.HintSize="831,830" sap2010:WorkflowViewState.IdRef="OpenBrowser_1" Url="[in_Repository]">
-      <ui:OpenBrowser.Body>
+    <ui:BrowserScope Browser="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" UiBrowser="{x:Null}" BrowserType="Edge" DisplayName="Attach Github repo" sap:VirtualizedContainerService.HintSize="831,875" sap2010:WorkflowViewState.IdRef="BrowserScope_1" InformativeScreenshot="a8263e955cc6920b50f1330be4f9f16e" Selector="&lt;html app='msedge.exe' title='schigit/anotherrepo' /&gt;">
+      <ui:BrowserScope.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
@@ -160,6 +160,15 @@
               </If.Else>
             </If>
           </Sequence>
+        </ActivityAction>
+      </ui:BrowserScope.Body>
+    </ui:BrowserScope>
+    <ui:OpenBrowser CommunicationMethod="{x:Null}" Hidden="{x:Null}" NewSession="{x:Null}" Private="{x:Null}" UiBrowser="{x:Null}" BrowserType="Edge" DisplayName="Open the repository URL" sap:VirtualizedContainerService.HintSize="831,116" sap2010:WorkflowViewState.IdRef="OpenBrowser_1" Url="[in_Repository]">
+      <ui:OpenBrowser.Body>
+        <ActivityAction x:TypeArguments="x:Object">
+          <ActivityAction.Argument>
+            <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
+          </ActivityAction.Argument>
         </ActivityAction>
       </ui:OpenBrowser.Body>
     </ui:OpenBrowser>
