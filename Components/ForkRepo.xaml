@@ -1,12 +1,12 @@
 <Activity mc:Ignorable="sap sap2010" x:Class="ForkRepo" this:ForkRepo.in_OrganizationName="testorg13918" this:ForkRepo.in_Repository="https://github.com/schigit/anotherrepo" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:this="clr-namespace:" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <x:Members>
     <x:Property sap2010:Annotation.AnnotationText="Github Organization to be forked to." Name="in_OrganizationName" Type="InArgument(x:String)" />
-    <x:Property sap2010:Annotation.AnnotationText="Repository to be forked&#xD;&#xA;" Name="in_Repository" Type="InArgument(x:String)" />
+    <x:Property sap2010:Annotation.AnnotationText="Repository to be forked.&#xA;" Name="in_Repository" Type="InArgument(x:String)" />
   </x:Members>
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1208,831</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1328,1029</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ForkRepo_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="26">
@@ -67,14 +67,14 @@
       <AssemblyReference>System.ServiceModel</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:Annotation.AnnotationText="Forks a Github Repository to the specified Organization." DisplayName="ForkRepo" sap:VirtualizedContainerService.HintSize="602,669" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence sap2010:Annotation.AnnotationText="Forks a Github Repository to the specified Organization. Takes in the organization name from the dispatcher prompt as well as the transaction item(repository URL) to navigate to the repository and fork it into the organization. " DisplayName="ForkRepo" sap:VirtualizedContainerService.HintSize="873,964" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
         <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:OpenBrowser CommunicationMethod="{x:Null}" Hidden="{x:Null}" NewSession="{x:Null}" Private="{x:Null}" UiBrowser="{x:Null}" BrowserType="Edge" DisplayName="Open Browser" sap:VirtualizedContainerService.HintSize="831,830" sap2010:WorkflowViewState.IdRef="OpenBrowser_1" Url="[in_Repository]">
+    <ui:OpenBrowser CommunicationMethod="{x:Null}" Hidden="{x:Null}" NewSession="{x:Null}" Private="{x:Null}" UiBrowser="{x:Null}" BrowserType="Edge" DisplayName="Open the repository URL" sap:VirtualizedContainerService.HintSize="831,830" sap2010:WorkflowViewState.IdRef="OpenBrowser_1" Url="[in_Repository]">
       <ui:OpenBrowser.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
@@ -89,7 +89,7 @@
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <ui:UiElementExists DisplayName="Repo Name Exists" Exists="[FoundName]" sap:VirtualizedContainerService.HintSize="755,106" sap2010:WorkflowViewState.IdRef="UiElementExists_1">
+            <ui:UiElementExists DisplayName="Check if the repo name exists" Exists="[FoundName]" sap:VirtualizedContainerService.HintSize="755,106" sap2010:WorkflowViewState.IdRef="UiElementExists_1">
               <ui:UiElementExists.Target>
                 <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="9d1176fd-ebeb-4ff8-ade8-957a6fd7cc45" InformativeScreenshot="87d71dd96939e3efe07751e52f4e84d5" Selector="&lt;html app='msedge.exe' title='*' /&gt;&lt;webctrl css-selector='body&amp;gt;div&amp;gt;div&amp;gt;main&amp;gt;div&amp;gt;div&amp;gt;div' idx='1' parentid='js-repo-pjax-container' tag='DIV' /&gt;">
                   <ui:Target.TimeoutMS>
@@ -103,7 +103,7 @@
             </ui:UiElementExists>
             <If Condition="[FoundName = True]" sap:VirtualizedContainerService.HintSize="755,491" sap2010:WorkflowViewState.IdRef="If_1">
               <If.Then>
-                <Sequence sap:VirtualizedContainerService.HintSize="376,344" sap2010:WorkflowViewState.IdRef="Sequence_3">
+                <Sequence DisplayName="A repo name is found" sap:VirtualizedContainerService.HintSize="376,344" sap2010:WorkflowViewState.IdRef="Sequence_3">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
