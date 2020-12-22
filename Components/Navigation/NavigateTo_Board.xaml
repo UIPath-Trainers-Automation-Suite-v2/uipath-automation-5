@@ -5,7 +5,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>783.333333333333,984.666666666667</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>544,1034.66666666667</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Navigate_To_Board_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -66,14 +66,14 @@
       <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:Annotation.AnnotationText="This workflow closes the Add Members window and returns the user to the Board webpage. It takes in a UiElement argument of the Zoho board wepage." DisplayName="Navigate_To_Board" sap:VirtualizedContainerService.HintSize="476,880" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence sap2010:Annotation.AnnotationText="This workflow closes the Add Members window and returns the user to the Board webpage. It takes in a UiElement argument of the Zoho board wepage.&#xD;&#xA;&#xD;&#xA;Preconditions: The Add Members window should be open in the Microsoft Edge browser." DisplayName="Navigate_To_Board" sap:VirtualizedContainerService.HintSize="476,930" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
         <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <uix:NApplicationCard sap2010:Annotation.AnnotationText="Attach the Zoho board webpage using the UiElement Argument " AttachMode="ByInstance" CloseMode="IfOpenedByAppBrowser" DisplayName="Use Browser Edge: (54) Revature" sap:VirtualizedContainerService.HintSize="434,742.666666666667" sap2010:WorkflowViewState.IdRef="NApplicationCard_2" InUiElement="[in_Browser]" Version="V1">
+    <uix:NApplicationCard sap2010:Annotation.AnnotationText="Attach the Zoho board webpage using the UiElement Argument " AttachMode="ByInstance" CloseMode="IfOpenedByAppBrowser" DisplayName="Use Browser Edge: Revature" sap:VirtualizedContainerService.HintSize="434,742.666666666667" sap2010:WorkflowViewState.IdRef="NApplicationCard_2" InUiElement="[in_Browser]" InteractionMode="Simulate" Version="V1">
       <uix:NApplicationCard.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
