@@ -5,7 +5,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>825.333333333333,534</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>610,534</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>GetNameOfGithubOrg_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="21">
@@ -62,7 +62,7 @@
         <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:InputDialog Options="{x:Null}" OptionsString="{x:Null}" sap2010:Annotation.AnnotationText="Asks User to input the name of the organization" DisplayName="Input Dialog" sap:VirtualizedContainerService.HintSize="334,275.333333333333" sap2010:WorkflowViewState.IdRef="InputDialog_1" IsPassword="False" Label="Please enter the name of the GitHub Organization you wish to fork the repositories to: " Title="GitHub Organization">
+    <ui:InputDialog Options="{x:Null}" OptionsString="{x:Null}" sap2010:Annotation.AnnotationText="Asks User to input the name of the organization" DisplayName="Input Github Organization" sap:VirtualizedContainerService.HintSize="334,275.333333333333" sap2010:WorkflowViewState.IdRef="InputDialog_1" IsPassword="False" Label="Please enter the name of the GitHub Organization you wish to fork the repositories to: " Title="GitHub Organization">
       <ui:InputDialog.Result>
         <OutArgument x:TypeArguments="x:String">[out_OrganizationName]</OutArgument>
       </ui:InputDialog.Result>
