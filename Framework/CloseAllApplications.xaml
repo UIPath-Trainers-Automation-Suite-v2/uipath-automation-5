@@ -5,7 +5,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>910,1201</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>824,1214.4</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>CloseAllApplications_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -74,27 +74,27 @@
       <AssemblyReference>Microsoft.Bcl.AsyncInterfaces</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:Annotation.AnnotationText="Do the necessary procedures for ending the process (e.g., logout) and close the used applications. Use the Use Application/Browser and Click activities to signout and close the browser. &#xD;&#xA;Precondition: Must be signed in and be on the https://connect.revature.net/    web page." DisplayName="Close All Applications" sap:VirtualizedContainerService.HintSize="476,1096" sap2010:WorkflowViewState.IdRef="Sequence_2">
+  <Sequence sap2010:Annotation.AnnotationText="Do the necessary procedures for ending the process (e.g., logout) and close the used applications. Use the Use Application/Browser and Click activities to signout and close the browser. &#xA;Precondition: Must be signed in and be on the https://connect.revature.net/    web page." DisplayName="Close All Applications" sap:VirtualizedContainerService.HintSize="475.2,1109.6" sap2010:WorkflowViewState.IdRef="Sequence_2">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
         <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:LogMessage DisplayName="Log message (close applications)" sap:VirtualizedContainerService.HintSize="434,91" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Trace" Message="[&quot;Closing applications...&quot;]" />
-    <uix:NApplicationCard sap2010:Annotation.AnnotationText="Closes the passed argument window." AttachMode="ByInstance" CloseMode="Always" DisplayName="Use Browser - Zoho Connect" sap:VirtualizedContainerService.HintSize="434,786" sap2010:WorkflowViewState.IdRef="NApplicationCard_2" InUiElement="[in_Browser]" InteractionMode="Simulate" Version="V1">
+    <ui:LogMessage DisplayName="Log message (close applications)" sap:VirtualizedContainerService.HintSize="433.6,92.8" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Trace" Message="[&quot;Closing applications...&quot;]" />
+    <uix:NApplicationCard sap2010:Annotation.AnnotationText="Closes the passed argument window." AttachMode="ByInstance" CloseMode="Always" DisplayName="Use Browser - Zoho Connect" sap:VirtualizedContainerService.HintSize="433.6,792" sap2010:WorkflowViewState.IdRef="NApplicationCard_2" InUiElement="[in_Browser]" InteractionMode="Simulate" Version="V1">
       <uix:NApplicationCard.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="376,539" sap2010:WorkflowViewState.IdRef="Sequence_4">
+          <Sequence DisplayName="Logout" sap:VirtualizedContainerService.HintSize="375.2,544" sap2010:WorkflowViewState.IdRef="Sequence_4">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <uix:NClick sap2010:Annotation.AnnotationText="Clicks the User Account Portrait at the top right corner of the web page." ClickType="Single" DisplayName="Click - User Portrait" sap:VirtualizedContainerService.HintSize="334,208" sap2010:WorkflowViewState.IdRef="NClick_3" InteractionMode="Simulate" KeyModifiers="None" MouseButton="Left">
+            <uix:NClick sap2010:Annotation.AnnotationText="Clicks the User Account Portrait at the top right corner of the web page." ClickType="Single" DisplayName="Click - User Portrait" sap:VirtualizedContainerService.HintSize="333.6,211.2" sap2010:WorkflowViewState.IdRef="NClick_3" InteractionMode="Simulate" KeyModifiers="None" MouseButton="Left">
               <uix:NClick.Target>
                 <uix:TargetAnchorable BrowserURL="https://connect.revature.net/" DesignTimeRectangle="1885, 89, 28, 28" FriendlyName="'SPAN'" FullSelectorArgument="&lt;webctrl parentid='portalHeaderOptions' tag='SPAN' /&gt;" FuzzySelectorArgument="&lt;webctrl parentid='portalHeaderOptions' tag='SPAN' type='' aaname='' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAANHSURBVFhH1ZaJbtpAEIb7/s/VSmmbNolSkjSEI8FgwMGAr9jmmO63sI5jbLAjRVF/aSS0nuPfuZYv8sn4vwi4c0+6/ZFctdpydt6Sr2dXWvjNGd/QaYJaBEZjR35d3sn337dy8acjrXtL7jq23PcmWvjNGd/QQRebOjhKwA8ifbOfF391gLYK9tCfSvdpKgPblbGz1GKNXXXmSLu/I4QuNtji4xgqCUwcV6f36qavnT48TnWwIIwlihOJk5Wkq7WslCTpSsIoEcf1pWc9Z5nBFh/4qkIpAQy+/bjWN9HB1a2H47kOutluZbvXy2OrziHjBy/yOJypbEyzbOCrisQBAVIGaxOctPbVrZZ+pIOcwmaz1bpkgpIZEvgsK8cBAepm0o5Q2+nM07eri/V6I6PJQpfN+MEnvot4Q4DOpXmMEben2aKXZK9RH+4ilN7gtR8QfBen4w0BxsekHtk13kLfqCnCKNa9kCeAb2LkkRFggTDDeYOOIjB99lRdmxNgMix7no2mEWLkl1VGgC122eq+UTaj954MMKK6D/bTYIRlRSyDjAANkk8/wigNJ3PtrCl2BOYHBIiRb8aMAPs8v14RxuhpNHtXE8ZJqhu4WAJiEMsgI8Cc5hWN0Ehh2IwA+2Lh7XZBmU9iGZwkwCjhrAkgwFpmh5T5LCVQVgKkO3BktghqbUGD3SJS9c8tIiOVJShrQsS8A3U3IURD1TN9S70HBV9IZROWjaGR3Tr2T+4DgtN8zH+x+41UjmHZIjJCJ/fUjXhyj5WCh8hdBtKpqD1SuYhAcRUbIZU0I+N4jIBOv1rBjK55jvOC78pVDIqPkRGaibTW6QP+LzA19ABlyO+Bk48RoEF4OgnKrZ9GrtjThSyW9f4PgJWaAkg4qm+wtdRCum0P5Pr2Ya/xigMC/Gk4v7hRRrv5D1TdeViobxNAlnFM07UiH8jdfUei6GX/9RUHBIDvB2INh5IkzVdwEfiwbVsFL19mpQQABkNFIgzD/UlzYIuPquCgkgBI01QcR23C2axRNtDFBlt8HMNRAgZBEMhkMtEOPc/TAfJLid+c8Q0ddLGpg1oEDOI4luVyqYOMRrZY1lCnmBpzxjd0mqARgY/AJxMQ+QfN1XIwDigLQwAAAABJRU5ErkJggg==" InformativeScreenshot="bee3d0bae6c520881980f75e12aa8493.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='(90) Revature' /&gt;" SearchSteps="FuzzySelector, Image" />
               </uix:NClick.Target>
@@ -104,7 +104,7 @@
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
             </uix:NClick>
-            <uix:NClick sap2010:Annotation.AnnotationText="Clicks the Sign Out button." ClickType="Single" DisplayName="Click - Sign Out" sap:VirtualizedContainerService.HintSize="334,197" sap2010:WorkflowViewState.IdRef="NClick_4" InteractionMode="Simulate" KeyModifiers="None" MouseButton="Left">
+            <uix:NClick sap2010:Annotation.AnnotationText="Clicks the Sign Out button." ClickType="Single" DisplayName="Click - Sign Out" sap:VirtualizedContainerService.HintSize="333.6,198.4" sap2010:WorkflowViewState.IdRef="NClick_4" InteractionMode="Simulate" KeyModifiers="None" MouseButton="Left">
               <uix:NClick.Target>
                 <uix:TargetAnchorable BrowserURL="https://connect.revature.net/" DesignTimeRectangle="1691, 781, 150, 33" ElementType="Button" FriendlyName="'Sign Out'" FullSelectorArgument="&lt;webctrl aaname='Sign Out' parentid='myAccountMenu' tag='BUTTON' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='Sign Out' parentid='myAccountMenu' tag='BUTTON' type='' check:text='Sign Out' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAJoAAAAlCAYAAAC6Y/C3AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAVuSURBVHhe7Zz3ixNbFMff/2ZhEcGOHQt2xYaICjYsIIhi+8GGor+JYEEFewEVLNgVk03dtE1ZU7Yk2U3Ou9/jm7zJzs2+THZ3zPDOhQ/Z5MzNzOZ+cs69N7v5i6RJc6CJaNIcaXWiVbJZ6nvzhvJ371Lu9m1BsA3cgUNwydxqoiHQ++gRlbxeqqTTRIWCINgG7sAhuGSWrSYaLBz0+7WdBcEucAlOGa0mGlJeNZPRdhIEu8AlOGW0mmior7oOgtAq7NQ/TUQTxg0RTXAEEU1wBBFNcARXi1b99YsKDx5QbPduCsyfT+HVqyl1+jSVvn9XS+e8to/wZ3CnaEqiwsOH5J87l7qPHKHi5880GAzyfk3+zh0Kr1lDfc+f6/uOQDWdpsFwWL0AuX8fVz8PRSL1j40Dxrnx5tHF3Y77RFOS9Vy9Sl2bNlHZ59MfY5NKMknxAwfIM2kSeSZMIG9HByVPnPidMR8/Ju/kyXyr6zta+l+/ptCqVeSZOJHPjWsIr1tHxS9ftMc3otzZScWvX7WxdsB1ovW9fEmRrVupkkho462QOnOGyy6Lq0QufvxIqZMnf2eZUIgyly7xra7vaMAmpnfKFJaaM6k6d9nrpcTBg+SbMYMG3r7V9tORuXCB0cXaAVeJhoGP7tjBsuniZiqpVFNlCMd1bdxoa5DwvBCjEo9r4xAG5ZZLrvpZdwz6BxYvpvT585Zj8Pzx/fupa/16zrbmWCOQkUW0MWLg/XuK7drFwuniZpCFojt3NpX5MEjBZcuo9OOHJYZzYi6IW9yH5LiPeSBufbNmkV8tRPpevOCBjm7fTl2bN5N/zhzOVrE9e7TXW7h/n48pezyWGOh/9Yp806fzLeafuD7jGgDOBREhLM5ZK72KdhTOVaJhhZk+e1Ybs6CyRObixaZkw/wmtGIFD1Zw+XLK3bxZk8MsmpH9stevcwzHoIxDGtzHAGP1a8yVIC769j57xvfN4NjQypU01CArQi7/vHn8O48kmpHx4nv3tqVgBq4SLXfrlvbFzF67xgNqQWUMTK57rlyx9LGgVpXFT58ocegQdU6dykJB0DrR1KBiEdL75An3QYlDKYeYuI9rw4Abz8nHKxkgi/GYgYimWjtnNEzSdbHhQILksWMsTjNzNTP9ahKOyTgykVk0xPL37lFg4ULKXL7MZRElFCIgZkc0rGJ9M2c2XCly6Zw9m88rojkMBqXRnGc42AJpRTKA/TiUQK1oaqXYffQoi4LHzM9vRzTMrYJLllDq1Kn/XAyIaA7DA7BvH/U+faqNm2EBmthkxZYGSljuxg3ug4HD4GNgIcNw0bBBHFi0iJLHj/PrBImGolGO2RENIDuiTOMNUfr5k99ApW/feHJv3t7A6hVS8twQK9pYjCLbtllE4y0Z9TtUe3rqztMOuEo0gBc/vHYtT+B1cduogcur3xerR2PVhg1U/hhLxc2iYRCxwIBkmBcmDh/ma0H2w/XYFQ1gYxbl17xhG9mypXZ+A0iJVWzntGm8cOGMtmFDTTTek+vo4P7tmNlcJxrAi44shI1VXbxVkAk4E2piALJBAvMqFmUW2a/44UPdsbZRwle6uy1ltA6VoUf6H45qNsvoYn8aV4oGBt69o+DSpTzw+HwTGQXZLn3uHAUWLNBuKYwWlkqVMMwT8RphtYnVaatzwf8TrhWNUe9wZBn8xQY+tkEpw1zLmDONByhVKIWYq+G8nMlGykIC427RBNcgogmOIKIJjiCiCY4gogmOoBVN/lNdGEsa/qc6vieh7Jfv3hDGhobfvWF8mxD+rLgdPzcT3AF/dqscwr6j9tuE0BCAhUh5qK+CYBe4A4fMkqHViSZN2ng1EU2aA43ob007+Z60XhMSAAAAAElFTkSuQmCC" InformativeScreenshot="a17861a217e1a9c49e17cfae3b2bf1df.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='(90) Revature' /&gt;" SearchSteps="FuzzySelector, Image" Text="Sign Out" TextMethod="AttributeText" TextSelector="&lt;webctrl tag='BUTTON' type='' /&gt;" />
               </uix:NClick.Target>
