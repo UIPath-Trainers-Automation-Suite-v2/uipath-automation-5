@@ -7,7 +7,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>824,1389.6</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>824,1336.8</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>SignInToRevatureConnect_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="39">
@@ -88,20 +88,20 @@
       <AssemblyReference>UiPath.CV.Activities</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:Annotation.AnnotationText="This workflow signs into Revature Connect using the credentials retrieved from Windows Credentials Manager. It Pauses the execution if 2FA is required and continues when the Revature Connect Homepage appears.&#xA;&#xA;Preconditions: The login page for Revature Connect should be open on a Microsoft Edge browser." DisplayName="SignInToRevatureConnect" sap:VirtualizedContainerService.HintSize="829.6,1324.8" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence sap2010:Annotation.AnnotationText="This workflow signs into Revature Connect using the credentials retrieved from Windows Credentials Manager. It Pauses the execution if 2FA is required and continues when the Revature Connect Homepage appears.&#xA;&#xA;Preconditions: The login page for Revature Connect should be open on a Microsoft Edge browser." DisplayName="SignInToRevatureConnect" sap:VirtualizedContainerService.HintSize="829.6,1232" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
         <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <uix:NApplicationCard sap2010:Annotation.AnnotationText="Attach the Microsoft Edge Browser with the Revature Connect login page." AttachMode="ByInstance" DisplayName="Use Browser Edge: Zoho Accounts" sap:VirtualizedContainerService.HintSize="788,1156" sap2010:WorkflowViewState.IdRef="NApplicationCard_3" InUiElement="[in_Browser]" InteractionMode="Simulate" Version="V1">
+    <uix:NApplicationCard sap2010:Annotation.AnnotationText="Attach the Microsoft Edge Browser with the Revature Connect login page." AttachMode="ByInstance" DisplayName="Use Browser Edge: Zoho Accounts" sap:VirtualizedContainerService.HintSize="788,1063.2" sap2010:WorkflowViewState.IdRef="NApplicationCard_3" InUiElement="[in_Browser]" InteractionMode="Simulate" Version="V1">
       <uix:NApplicationCard.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Sign In and Confirm Sign In" sap:VirtualizedContainerService.HintSize="754.4,908" sap2010:WorkflowViewState.IdRef="Sequence_6">
+          <Sequence DisplayName="Sign In and Confirm Sign In" sap:VirtualizedContainerService.HintSize="754.4,815.2" sap2010:WorkflowViewState.IdRef="Sequence_6">
             <Sequence.Variables>
               <Variable x:TypeArguments="x:Boolean" Name="RevatureExists" />
               <Variable x:TypeArguments="x:Boolean" Default="False" Name="ElementExists" />
@@ -201,88 +201,6 @@
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
             </ui:InterruptibleDoWhile>
-            <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="712.8,52.8" sap2010:WorkflowViewState.IdRef="CommentOut_1">
-              <ui:CommentOut.Body>
-                <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="924.8,145.6" sap2010:WorkflowViewState.IdRef="Sequence_13">
-                  <sap:WorkflowViewStateService.ViewState>
-                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                    </scg:Dictionary>
-                  </sap:WorkflowViewStateService.ViewState>
-                  <ui:InterruptibleDoWhile Condition="[ElementExists.Equals(False)]" DisplayName="Check For Element While It Does Not Exists" sap:VirtualizedContainerService.HintSize="200,52.8" sap2010:WorkflowViewState.IdRef="InterruptibleDoWhile_1">
-                    <ui:InterruptibleDoWhile.Body>
-                      <Sequence DisplayName="Confirm Sign In" sap:VirtualizedContainerService.HintSize="848,578.4" sap2010:WorkflowViewState.IdRef="Sequence_10">
-                        <sap:WorkflowViewStateService.ViewState>
-                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                            <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                          </scg:Dictionary>
-                        </sap:WorkflowViewStateService.ViewState>
-                        <uix:NCheckState DisplayName="Check App State 'Trending Tags'" Exists="[ElementExists]" sap:VirtualizedContainerService.HintSize="806,485.333333333333" sap2010:WorkflowViewState.IdRef="NCheckState_1" Timeout="70">
-                          <uix:NCheckState.IfExists>
-                            <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="376,255.333333333333" sap2010:WorkflowViewState.IdRef="Sequence_7">
-                              <sap:WorkflowViewStateService.ViewState>
-                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                </scg:Dictionary>
-                              </sap:WorkflowViewStateService.ViewState>
-                              <Assign sap:VirtualizedContainerService.HintSize="334,62" sap2010:WorkflowViewState.IdRef="Assign_1">
-                                <Assign.To>
-                                  <OutArgument x:TypeArguments="x:Boolean">[ElementExists]</OutArgument>
-                                </Assign.To>
-                                <Assign.Value>
-                                  <InArgument x:TypeArguments="x:Boolean">True</InArgument>
-                                </Assign.Value>
-                              </Assign>
-                              <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="334,58.6666666666667" sap2010:WorkflowViewState.IdRef="MessageBox_1" Text="[&quot;Element appeared&quot;]" />
-                            </Sequence>
-                          </uix:NCheckState.IfExists>
-                          <uix:NCheckState.IfNotExists>
-                            <Sequence DisplayName="Target does not appear" sap:VirtualizedContainerService.HintSize="376,255.333333333333" sap2010:WorkflowViewState.IdRef="Sequence_8">
-                              <sap:WorkflowViewStateService.ViewState>
-                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                </scg:Dictionary>
-                              </sap:WorkflowViewStateService.ViewState>
-                              <Assign sap:VirtualizedContainerService.HintSize="334,62" sap2010:WorkflowViewState.IdRef="Assign_2">
-                                <Assign.To>
-                                  <OutArgument x:TypeArguments="x:Boolean">[ElementExists]</OutArgument>
-                                </Assign.To>
-                                <Assign.Value>
-                                  <InArgument x:TypeArguments="x:Boolean">False</InArgument>
-                                </Assign.Value>
-                              </Assign>
-                              <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="334,58.6666666666667" sap2010:WorkflowViewState.IdRef="MessageBox_2" Text="[&quot;Please authenticate&quot;]" />
-                            </Sequence>
-                          </uix:NCheckState.IfNotExists>
-                          <uix:NCheckState.Target>
-                            <uix:TargetAnchorable BrowserURL="https://connect.revature.net/" DesignTimeRectangle="973, 197, 161, 18" FriendlyName="'Trending Tags'" FullSelectorArgument="&lt;webctrl parentid='widget_TRENDING_TAGS' tag='H3' /&gt;" FuzzyAccuracy="0.54" FuzzySelectorArgument="&lt;webctrl parentid='widget_TRENDING_TAGS' tag='H3' type='' aaname='Trending Tags' check:text='Trending Tags' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAKUAAAAWCAYAAAChdVwBAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAU1SURBVGhD7ZlpK7VbGMfPV/ABfAjFC0kiIi8kRMlUZI7IFEWZknkoMpMXMouQUgglMmbIVMiYkJkM1+l/nb3ubvvsbdt4nrPP0/rVbu973etew73+6xrW/oskEhNDilJickhRSkwOKUqJyaGIMicnhzw8PPR+qqurNTV/Lefn5+Tp6UnT09N83dvbS76+vnRwcMDXP8XDw4PJzFnyHkWUy8vLNDExwZ/6+nqytLSk9vZ2pWxjY0NT89eiS5Tu7u60v7/P1z/Fy8uLycxZ8h6d7huCsLW1pa2tLU3J70NblL+L/3LOkvd8WpTDw8M0OztLq6urlJaWRj09PVx+d3dHra2tFBcXR2VlZbS3t8flAPXx3NnZGdXU1HCdwcFBenx81NQgen19pcnJSUpISKCUlBQaHx9/J8rt7W1qaGig29tbvhbjQD/5+fn8DJ5HOwL0V1dXR1FRUdwvrCzE/vT0pKnxb3TNWYwtPT2d29LuR8w9JiaGx4Jn0Q9CA4BrlOM+LD7qSwzzaVHi5fr7+1NwcDD/Hhsbo9PTUy4rLS3lhR8aGiJvb2/F7cEVWltbU0REBIupq6uL20U5eHt7o46ODnJ0dKTu7m5uMzU1lczMzBRR4hsixWID9I02UG90dJQaGxu5j6mpKb4PQQYGBlJtbS0dHx9TW1sb38/NzeVrfWjPGe69pKSEQkJClLHb2dnRwMAA34fwkpKSKDs7mw4PD2lkZEQZF+aPdlxcXKizs5N/l5eX84aTGMYoUbq5udHR0ZGmhKiyspKysrLo+flZU0LU0tJCBQUFLDiILzQ0lK6urjR3SbGqWNSTkxNOKCBGgbb71iXKjIwMpU/0k5eXx+UA9cPDw+nm5oav7+/v2VKJ9vSha87oQ20ZsQEgOlhc1AsICFCELsYhNhy+0S/6lxiHUaLES8fLBxAVxBUWFsaWUnxgPYTosDDit0BdBjcMoast2GdEKQQoUJetr6+Tn5+fsnmENV9YWOBrfeiaswAiRP/Nzc3vNhTaXVlZ4TpwzbGxsRyeAIQdTk5O7CWQNKnfgeRjjBKlWgx4yVggLBQWTP2BZRSW8iNRagsO4Pd3RIl+4bKtrKzYCiM0QGattua60DVnxM+RkZHcDtw0NqB6PnDHCA1wOgBXjSMmddyIMTc1NZGrqyuPR8xJ8jFfFiUWH25auGpdGBIlrAwWbHNzU3P3+6K8vLxka72zs8O/P0pu1GjPGZbQx8fnXRyoHjuSNQh1bm6O+1HPURtsCLwn7XFLdPNlUYL5+Xmuh4QDsRdePlyVcJWGRInFDAoKouLiYl5klFVVVZG5ufmXRSniVLjwoqIiqqio4CREPK8P7TlD1AgtlpaW+BoJFNyzGDssIjJyWEn0jdClv79fCRtwOrC2tsYbVogSMbjEMN8SJV44LAmsHTJmiCk6Olr598WQKMHi4iIvLJ53cHDgpCc+Pv7LokTfOMJBbIe2cDQE4aMPCFYf2nOGkJAxW1hY8LMYE04XYIUx9ouLC46xkZVjIyLBQ2JjY2PDcS3iZbwXxJX29vaUnJzMz0gMo1OUXwGWTp2pGgsWWl8YYAywuhC+GhzZIFOG9TMWjEu9qQQ4wtLeHNfX13zaAEEKcL762RBC8g8/JkpTAZbLy8uLrSRcLlwojnHgXg0lO8YAy+rs7Ex9fX2c4e/u7lJhYSElJibKQ/Jv8seJEtYaQoQVQ6KSmZlJMzMz37LiuoBVR9yIOBHxK/6RQmyt/rdK8jX+OFFK/v9IUUpMDilKickhRSkxMYj+Bh+bHRE3fe5XAAAAAElFTkSuQmCC" InformativeScreenshot="c387843070cf2713cfd6fccc4f39386d.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='(94) Revature' /&gt;" SearchSteps="FuzzySelector" Text="Trending Tags" TextMethod="AttributeText" TextSelector="&lt;webctrl tag='H3' type='' /&gt;" />
-                          </uix:NCheckState.Target>
-                          <sap:WorkflowViewStateService.ViewState>
-                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                              <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                            </scg:Dictionary>
-                          </sap:WorkflowViewStateService.ViewState>
-                        </uix:NCheckState>
-                      </Sequence>
-                    </ui:InterruptibleDoWhile.Body>
-                    <sap:WorkflowViewStateService.ViewState>
-                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                      </scg:Dictionary>
-                    </sap:WorkflowViewStateService.ViewState>
-                  </ui:InterruptibleDoWhile>
-                </Sequence>
-              </ui:CommentOut.Body>
-              <sap:WorkflowViewStateService.ViewState>
-                <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                </scg:Dictionary>
-              </sap:WorkflowViewStateService.ViewState>
-            </ui:CommentOut>
           </Sequence>
         </ActivityAction>
       </uix:NApplicationCard.Body>
