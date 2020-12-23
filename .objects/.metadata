@@ -1,6 +1,7 @@
 ﻿{
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   "Id": "1sTgaNxYUkGnSqIdt3I2Xg",
   "Type": "Library",
   "Created": "2020-12-22T20:49:22.7562127Z",
@@ -26,4 +27,13 @@
   ],
   "Updated": "2020-12-22T20:49:14.6024032Z"
 >>>>>>> ForkRepo_InitAllApplications
+=======
+  "Id": "zb6AtVyMLUq6pw8fwNv30Q",
+  "Type": "Library",
+  "Created": "2020-12-23T05:32:48.2126774Z",
+  "CreatedBy": [
+    "UiPath.Platform, Version=20.10.4.0, Culture=neutral, PublicKeyToken=null"
+  ],
+  "Updated": "2020-12-23T05:32:48.2126774Z"
+>>>>>>> ForkRepo_Process
 }
