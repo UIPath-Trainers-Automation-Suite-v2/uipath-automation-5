@@ -76,7 +76,7 @@
         <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <If sap2010:Annotation.AnnotationText="This step checks if the number of io_TransactionData rows is less than in_TransactionNumber and if so, retrieves the next out_TransactionItem. It also includes more information about a transaction item and it is used mainly for logging and visualization purposes.&#xA;For example, if transaction items are invoices, then out_TransactionID can be the invoice number, out_TransactionField1 can be the invoice date and out_TransactionField2 can be the invoice amount." Condition="[in_TransactionData.Rows.Count &lt; in_TransactionNumber]" DisplayName="If a new transaction item can be retrieved, get the item and additional information about it" sap:VirtualizedContainerService.HintSize="610.4,638.4" sap2010:WorkflowViewState.IdRef="If_1">
+    <If sap2010:Annotation.AnnotationText="This step checks if the number of io_TransactionData rows is less than in_TransactionNumber and if so, retrieves the next out_TransactionItem. It also includes more information about a transaction item and it is used mainly for logging and visualization purposes.&#xA;For example, if transaction items are invoices, then out_TransactionID can be the invoice number, out_TransactionField1 can be the invoice date and out_TransactionField2 can be the invoice amount." Condition="[in_TransactionNumber &lt; in_TransactionData.Rows.Count]" DisplayName="If a new transaction item can be retrieved, get the item and additional information about it" sap:VirtualizedContainerService.HintSize="610.4,638.4" sap2010:WorkflowViewState.IdRef="If_1">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
@@ -111,7 +111,7 @@
               <OutArgument x:TypeArguments="x:String">[out_TransactionField]</OutArgument>
             </Assign.To>
             <Assign.Value>
-              <InArgument x:TypeArguments="x:String">[out_TransactionItem("Repository").ToString]</InArgument>
+              <InArgument x:TypeArguments="x:String">[out_TransactionItem("Repository URL").ToString]</InArgument>
             </Assign.Value>
           </Assign>
         </Sequence>
