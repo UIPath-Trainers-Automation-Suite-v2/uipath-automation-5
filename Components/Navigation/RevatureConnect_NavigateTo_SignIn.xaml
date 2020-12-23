@@ -1,12 +1,12 @@
 <Activity mc:Ignorable="sap sap2010" x:Class="NavigateToRevatureConnect" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=mscorlib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <x:Members>
-    <x:Property sap2010:Annotation.AnnotationText="Argument for passing browser instance" Name="out_Browser" Type="InOutArgument(ui:UiElement)" />
     <x:Property sap2010:Annotation.AnnotationText="Dictionary structure to store configuration data of the process (settings, constants and assets)." Name="in_Config" Type="InArgument(scg:Dictionary(x:String, x:Object))" />
+    <x:Property sap2010:Annotation.AnnotationText="Argument for passing browser instance" Name="io_Browser" Type="InOutArgument(ui:UiElement)" />
   </x:Members>
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>824,613.6</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>846,522</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>NavigateToRevatureConnect_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -78,14 +78,14 @@
       <AssemblyReference>System.ComponentModel.Composition</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:Annotation.AnnotationText="This workflow opens the login page of Revature Connect on a Microsoft Edge Browser and passes the UiElement in an argument. " DisplayName="NavigateToRevatureConnect" sap:VirtualizedContainerService.HintSize="475.2,413.6" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence sap2010:Annotation.AnnotationText="This workflow opens the login page of Revature Connect on a Microsoft Edge Browser and passes the UiElement in an argument. " DisplayName="NavigateToRevatureConnect" sap:VirtualizedContainerService.HintSize="476,417.333333333333" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
         <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <uix:NApplicationCard sap2010:Annotation.AnnotationText="Opens the login page of Revature Connect and outputs the browser instance." AttachMode="ByInstance" DisplayName="Use Browser Edge: Zoho Accounts" sap:VirtualizedContainerService.HintSize="433.6,276.8" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="Simulate" OutUiElement="[out_Browser]" Version="V1">
+    <uix:NApplicationCard sap2010:Annotation.AnnotationText="Opens the login page of Revature Connect and outputs the browser instance." AttachMode="ByInstance" DisplayName="Use Browser Edge: Zoho Accounts" sap:VirtualizedContainerService.HintSize="434,280" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="Simulate" OutUiElement="[io_Browser]" Version="V1">
       <uix:NApplicationCard.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
@@ -94,7 +94,7 @@
         </ActivityAction>
       </uix:NApplicationCard.Body>
       <uix:NApplicationCard.TargetApp>
-        <uix:TargetApp BrowserType="Edge" IconBase64="iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAH5SURBVDhPVVNNb9NQEPTPKo39zJVwReLeNkfatHBE/AnU1nDixo8ADpyR+BeVajuxYycNQsRZZmafU6i0fe9tZmdnP5zUWbA6S+0+P7YqxT3PrU6fyFeHYz8jhlYF3CcT3IHDO+GDziZ1AMFNikAEV2km3wLEVTqxRY5AkJeZn4xLygzZAC4zgJXRs5VUo3tQwCJkkdB9CySkqYQKJBUk0aHg51Pri1vb3l7bA2zzobA13pt3b21J6VG1FIgto1zW5QT9/Nz2+53Z3v7/w7sKjlEyEIHAHUuWEOVRajd/Y83rc+sur2z7+ZMNYhsOjVXpwEYCr3u8j/Xx3ZydmK06Cfj99Xv0B1sGlAHVIqBT4yE7bAxenZ3a0CEYyXd9Z+3LFyr3nvVzKsCpB3U4OgTxR46tZ/B6o8xDv7J2NhPGcWyg4xNlRjPK/ClOH2U1ndpwd+dNhIJ2dhKb7IFjdvYt4dKIBItBJwEPxXtlZnyLJo5ZHxU4jsunHrgcnytt9+MnQv9Ixba40U6si2tbf7zxJPmRJlXnUOCBcQN54lv49e2Lsvu/f84BimanUiA8zJt4UJFai7qa6TPrLi4kv72a22p+CXulRnKttY0iQQmqC6PRvuPOc2wYp6PehDz62IPHCVBxLCE6BAA7ahvf/Gz1rcTxEkvzLzSzvztjo425nTtGAAAAAElFTkSuQmCC" InformativeScreenshot="247eca355642af1de0ed0138039a2211.png" Selector="&lt;html app='msedge.exe' title='Zoho Accounts'/&gt;" Url="[in_Config(&quot;RevatureConnectURL&quot;).ToString]" />
+        <uix:TargetApp Area="0, 0, 0, 0" BrowserType="Edge" IconBase64="iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAH5SURBVDhPVVNNb9NQEPTPKo39zJVwReLeNkfatHBE/AnU1nDixo8ADpyR+BeVajuxYycNQsRZZmafU6i0fe9tZmdnP5zUWbA6S+0+P7YqxT3PrU6fyFeHYz8jhlYF3CcT3IHDO+GDziZ1AMFNikAEV2km3wLEVTqxRY5AkJeZn4xLygzZAC4zgJXRs5VUo3tQwCJkkdB9CySkqYQKJBUk0aHg51Pri1vb3l7bA2zzobA13pt3b21J6VG1FIgto1zW5QT9/Nz2+53Z3v7/w7sKjlEyEIHAHUuWEOVRajd/Y83rc+sur2z7+ZMNYhsOjVXpwEYCr3u8j/Xx3ZydmK06Cfj99Xv0B1sGlAHVIqBT4yE7bAxenZ3a0CEYyXd9Z+3LFyr3nvVzKsCpB3U4OgTxR46tZ/B6o8xDv7J2NhPGcWyg4xNlRjPK/ClOH2U1ndpwd+dNhIJ2dhKb7IFjdvYt4dKIBItBJwEPxXtlZnyLJo5ZHxU4jsunHrgcnytt9+MnQv9Ixba40U6si2tbf7zxJPmRJlXnUOCBcQN54lv49e2Lsvu/f84BimanUiA8zJt4UJFai7qa6TPrLi4kv72a22p+CXulRnKttY0iQQmqC6PRvuPOc2wYp6PehDz62IPHCVBxLCE6BAA7ahvf/Gz1rcTxEkvzLzSzvztjo425nTtGAAAAAElFTkSuQmCC" InformativeScreenshot="247eca355642af1de0ed0138039a2211.png" Selector="&lt;html app='msedge.exe' title='Zoho Accounts'/&gt;" Url="[in_Config(&quot;RevatureConnectURL&quot;).ToString]" />
       </uix:NApplicationCard.TargetApp>
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
