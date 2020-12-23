@@ -1,4 +1,5 @@
 ﻿{
+<<<<<<< HEAD
   "Id": "1sTgaNxYUkGnSqIdt3I2Xg",
   "Type": "Library",
   "Created": "2020-12-22T20:49:22.7562127Z",
@@ -6,4 +7,13 @@
     "UiPath.Platform, Version=20.10.4.0, Culture=neutral, PublicKeyToken=null"
   ],
   "Updated": "2020-12-22T20:49:22.7562127Z"
+=======
+  "Id": "MeZBjxv8skSBSxy0V6DG-w",
+  "Type": "Library",
+  "Created": "2020-12-23T01:30:27.9965784Z",
+  "CreatedBy": [
+    "UiPath.Platform, Version=20.10.4.0, Culture=neutral, PublicKeyToken=null"
+  ],
+  "Updated": "2020-12-23T01:30:27.9965784Z"
+>>>>>>> ForkRepo_KillAllProcesses
 }
