@@ -7,7 +7,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1149,645</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1002,640</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ProcessTransaction_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -79,7 +79,11 @@
     <Sequence sap:VirtualizedContainerService.HintSize="421,356" sap2010:WorkflowViewState.IdRef="Sequence_2">
       <Sequence.Variables>
         <Variable x:TypeArguments="ui:UiElement" Name="RepoBrowser" />
-        <Variable x:TypeArguments="x:String" Name="variable1" />
+        <Variable x:TypeArguments="x:String" Name="RepoName">
+          <Variable.Default>
+            <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_TransactionItem(&quot;Repository URL&quot;).ToString" />
+          </Variable.Default>
+        </Variable>
       </Sequence.Variables>
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -89,7 +93,7 @@
       <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke GitHub_Web_NavigateTo_Repository workflow" sap:VirtualizedContainerService.HintSize="379,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" UnSafe="False" WorkflowFileName="Components\Github\GitHub_Web_NavigateTo_Repository.xaml">
         <ui:InvokeWorkflowFile.Arguments>
           <InArgument x:TypeArguments="x:String" x:Key="in_RepositoryURL">
-            <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_TransactionItem(&quot;RepoURL&quot;).ToString" />
+            <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_TransactionItem(&quot;Repository URL&quot;).ToString" />
           </InArgument>
           <OutArgument x:TypeArguments="ui:UiElement" x:Key="out_RepoBrowser">
             <mva:VisualBasicReference x:TypeArguments="ui:UiElement" ExpressionText="RepoBrowser" />
@@ -101,7 +105,7 @@
           <InArgument x:TypeArguments="x:String" x:Key="in_OrganizationName">
             <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_OrganizationName" />
           </InArgument>
-          <InArgument x:TypeArguments="ui:UiElement" x:Key="in_RepoBrowser">
+          <InArgument x:TypeArguments="ui:UiElement" x:Key="in_Browser">
             <mva:VisualBasicValue x:TypeArguments="ui:UiElement" ExpressionText="RepoBrowser" />
           </InArgument>
         </ui:InvokeWorkflowFile.Arguments>
